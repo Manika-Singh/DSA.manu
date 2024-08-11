@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Function to print array
 void print_array(int a[] , int n)
 {
     for(int i = 0 ; i < n ; i++)
@@ -7,8 +8,11 @@ void print_array(int a[] , int n)
     printf("\n");
 }
 
+// Function for merging the divided array while sorting them
+
 void merge(int arr[] , int low , int high , int mid)
 {
+    // With the given value of mid, defining lengths of two new arrays Left & Right
     int n1 = mid - low + 1;
     int n2 = high - mid;
     int i  , j , k;
@@ -18,6 +22,9 @@ void merge(int arr[] , int low , int high , int mid)
         Left[i] = arr[low + i];
     for(j = 0 ; j < n2 ; j++)
         Right[j] = arr[mid + j + 1];
+
+    // Comparing the values of Left and Right array index wise 
+    // and reading the values back into the sorted array
 
     i = 0 , j = 0 , k = low;
     while (i < n1 && j < n2)
@@ -35,6 +42,8 @@ void merge(int arr[] , int low , int high , int mid)
         k++;
     }
 
+    // When no values of any of the array is left to compare then rest of the values
+    // (of left or right array which is still left) are copied in the sorted array
     while (i < n1) 
     {
         arr[k] = Left[i];
@@ -49,7 +58,9 @@ void merge(int arr[] , int low , int high , int mid)
         k++;
     }
 }
-    
+
+// To find the middle position in array and dividing it there.
+// and calling the function recursively till the elements are sole and can't be divided further
 void merge_sort(int arr[] , int low , int high)
 {
     int mid;
