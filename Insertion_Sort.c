@@ -18,9 +18,12 @@ int main()
 
     for (i = 0 ; i < n ; i++)
     {
+        // Value of arr[i] is copied in temp 
         temp = arr[i];
         j = i - 1;
 
+        // index value from one preceding i is compared to arr[i] and when then the
+        //value keeps swapping till the condition meet amd then finally value of arr[i] stored in temp is replaced
         while (j >= 0 && temp <= arr[j])
         {
             arr[j + 1] = arr[j];
