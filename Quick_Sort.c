@@ -1,9 +1,10 @@
 #include <stdio.h>
-
+//Function declaration
 void swap (int *a , int *b);
 void Quick_Sort(int array[] ,int low , int high);
 int Partition(int arr[] , int low , int high);
 
+//Function to swap by reference
 void swap(int *a , int *b)
 {
     int t = *a;
@@ -11,6 +12,8 @@ void swap(int *a , int *b)
     *b = t;
 }
 
+// This function finds the middle of the array and calls itself 
+// recursively after swapping the middle value with the pivot value
 void Quick_Sort(int array[] ,int low , int high)
 {
     if (low < high)
@@ -21,6 +24,8 @@ void Quick_Sort(int array[] ,int low , int high)
     }
 }
 
+// This function sets a pivot value and puts all the vlaues less than it on the left side of the middle
+// position. The values greater than pivot are put on the right side of the middle and then the middle is swapped with pivot.
 int Partition(int arr[] , int low , int high)
 {
     int Pivot = arr[low];
@@ -43,6 +48,7 @@ int Partition(int arr[] , int low , int high)
     return j;
 }
 
+// Function to print array
 void printArray(int arr[], int size) 
 {  
     int i;  
